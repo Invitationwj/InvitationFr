@@ -4,113 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Invitation Mariage</title>
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: 'Cormorant Garamond', serif;
-      background: #fffaf6;
-    }
-
-    /* --- Intro vidéo --- */
-    #intro-video {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 1000;
-      background: black;
-    }
-
-    #intro-video video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    /* --- Contenu caché au départ --- */
-    main {
-      display: none;
-      padding: 60px 20px;
-      max-width: 800px;
-      margin: auto;
-      text-align: center;
-    }
-
-    .conteneur-texte {
-      background-color: rgba(255, 255, 255, 0.9);
-      padding: 40px;
-      border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-      margin-top: 40px;
-    }
-
-    h1 {
-      font-size: 3em;
-      font-weight: 300;
-    }
-
-    p {
-      font-size: 1.2em;
-      line-height: 1.6;
-      margin-top: 20px;
-    }
-
-    form {
-      margin-top: 40px;
-    }
-
-    input, textarea {
-      width: 100%;
-      padding: 12px;
-      margin: 10px 0;
-      border: 1px solid #a8d5a2;
-      border-radius: 8px;
-    }
-
-    button {
-      background-color: #a8d5a2;
-      color: white;
-      border: none;
-      padding: 12px 28px;
-      font-size: 16px;
-      border-radius: 30px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    button:hover {
-      background-color: #94c994;
-    }
-
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 2em;
-      }
-
-      .conteneur-texte {
-        padding: 20px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
   <!-- Intro Video -->
   <div id="intro-video">
     <video autoplay muted playsinline onended="revealContent()">
-      <source src="intro.mov" type="video/mp4" />
+      <source src="intro.mp4" type="video/mp4" />
       Votre navigateur ne supporte pas la vidéo.
     </video>
   </div>
 
-  <!-- Page Content -->
-  <main>
+  <!-- Contenu principal -->
+  <main id="main-content">
     <div class="conteneur-texte">
       <h1>Vous êtes invités</h1>
       <p>Nous serions honorés de vous compter parmi nous pour célébrer notre mariage.</p>
@@ -124,14 +31,17 @@
     </div>
   </main>
 
-  <!-- Script -->
   <script>
     function revealContent() {
-      document.getElementById('intro-video').style.display = 'none';
-      document.querySelector('main').style.display = 'block';
+      const intro = document.getElementById('intro-video');
+      const main = document.getElementById('main-content');
+      intro.style.display = 'none';
+      main.classList.add('visible');
     }
   </script>
 
 </body>
 </html>
 
+
+ 
