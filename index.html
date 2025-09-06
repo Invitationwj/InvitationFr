@@ -3,40 +3,51 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Invitation</title>
+  <title>Invitation Mariage</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Vidéo plein écran -->
-  <div class="video-overlay" id="videoOverlay">
-    <video autoplay muted playsinline id="introVideo">
-      <source src="intro2.mp4" type="video/mp4">
-      Ton navigateur ne supporte pas la vidéo.
+  <!-- Vidéo d'intro -->
+  <div class="video-overlay">
+    <video autoplay muted playsinline id="intro-video">
+      <source src="intro2.mov" type="video/mp4">
+      Votre navigateur ne supporte pas la vidéo.
     </video>
   </div>
 
   <!-- Contenu principal -->
-  <div class="contenu">
+  <div class="contenu" id="main-content">
     <div class="conteneur-texte">
-      <h1>M & Y</h1>
-      <h2>Vous êtes invités</h2>
+      <h1>Wafa & Walid</h1>
+      <div class="ligne-sous-titre"></div>
       <p class="invitation-text">
-        Rejoignez-nous pour célébrer ce jour spécial ✨
+        Vous êtes chaleureusement invités à célébrer la <b>Fatha</b> de Wafa le 
+        <br> <b>1 novembre à 19h</b> 
+        <br> dans sa maison d'enfance à Ben Ankoun.
       </p>
+      <form class="rsvp">
+        <label><input type="checkbox"> Oui, je serai présent(e)</label>
+        <label><input type="checkbox"> Non, je ne pourrai pas venir</label>
+        <input type="text" placeholder="Nom et prénom">
+        <input type="email" placeholder="Votre email">
+        <input type="submit" value="Envoyer ma réponse">
+      </form>
     </div>
   </div>
 
   <script>
-    const video = document.getElementById("introVideo");
-    const overlay = document.getElementById("videoOverlay");
+    const video = document.getElementById('intro-video');
+    const overlay = document.querySelector('.video-overlay');
+    const content = document.getElementById('main-content');
 
-    // Quand la vidéo se termine → fondu
-    video.addEventListener("ended", () => {
-      overlay.classList.add("hidden");
+    video.addEventListener('ended', () => {
+      overlay.style.opacity = '0';
       setTimeout(() => {
-        overlay.style.display = "none"; // disparaît complètement après le fondu
-      }, 1500);
+        overlay.style.display = 'none';
+        content.style.opacity = '1';
+      }, 1000); // délai du fondu
     });
   </script>
 </body>
 </html>
+
