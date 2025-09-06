@@ -3,33 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Invitation Mariage</title>
+  <title>Invitation</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Vidéo d'intro -->
-  <div class="video-overlay">
+  <!-- Vidéo d’intro -->
+  <div id="video-container">
     <video autoplay muted playsinline id="intro-video">
-      <source src="intro2.mov" type="video/mp4">
-      Votre navigateur ne supporte pas la vidéo.
+      <source src="intro2.mov" type="video/quicktime">
+      <source src="intro2.mp4" type="video/mp4">
+      Ton navigateur ne supporte pas la vidéo.
     </video>
   </div>
 
-  <!-- Contenu principal -->
-  <div class="contenu" id="main-content">
+  <!-- Contenu du site -->
+  <div id="site-content">
     <div class="conteneur-texte">
-      <h1>Wafa & Jd</h1>
+      <h1>Vous êtes invités</h1>
       <div class="ligne-sous-titre"></div>
       <p class="invitation-text">
-        Vous êtes chaleureusement invités à célébrer la <b>Fatha</b> de Wafa le 
-        <br> <b>1 novembre à 19h</b> 
-        <br> dans sa maison d'enfance à Ben Ankoun.
+        Nous avons le plaisir de vous inviter à notre célébration spéciale.<br>
+        Date : 12 Octobre 2025<br>
+        Lieu : Jardin des Roses
       </p>
       <form class="rsvp">
-        <label><input type="checkbox"> Oui, je serai présent(e)</label>
-        <label><input type="checkbox"> Non, je ne pourrai pas venir</label>
-        <input type="text" placeholder="Nom et prénom">
-        <input type="email" placeholder="Votre email">
+        <label for="nom">Votre Nom</label>
+        <input type="text" id="nom" name="nom" required>
+        <label for="email">Votre Email</label>
+        <input type="email" id="email" name="email" required>
         <input type="submit" value="Envoyer ma réponse">
       </form>
     </div>
@@ -37,17 +38,15 @@
 
   <script>
     const video = document.getElementById('intro-video');
-    const overlay = document.querySelector('.video-overlay');
-    const content = document.getElementById('main-content');
+    const container = document.getElementById('video-container');
+    const content = document.getElementById('site-content');
 
     video.addEventListener('ended', () => {
-      overlay.style.opacity = '0';
-      setTimeout(() => {
-        overlay.style.display = 'none';
-        content.style.opacity = '1';
-      }, 1000); // délai du fondu
+      container.style.display = "none";   // cache la vidéo
+      content.classList.add("show");      // affiche le site
     });
   </script>
 </body>
 </html>
+
 
