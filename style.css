@@ -13,11 +13,12 @@
   transition: opacity 1s ease;
 }
 
-.video-overlay video {
+/*.video-overlay video {
   width: 100%;
   height: 100%;
   object-fit: cover; /* couvre tout l'écran sans barres noires */
-}
+}*/
+
 
 /* Contenu principal (caché au début) */
 .contenu {
