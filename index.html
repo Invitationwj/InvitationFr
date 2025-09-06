@@ -1,47 +1,42 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Invitation Mariage</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invitation</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <!-- Intro Video -->
-  <div id="intro-video">
-    <video autoplay muted playsinline onended="revealContent()">
-      <source src="intro2.mp4" type="video/mp4" />
-      Votre navigateur ne supporte pas la vidéo.
+  <!-- Écran vidéo -->
+  <div class="video-overlay">
+    <video autoplay muted playsinline id="introVideo">
+      <source src="intro2.mp4" type="video/mp4">
+      Ton navigateur ne supporte pas la vidéo.
     </video>
   </div>
 
-  <!-- Contenu principal -->
-  <main id="main-content">
+  <!-- Contenu du site -->
+  <div class="contenu">
     <div class="conteneur-texte">
-      <h1>Vous êtes invités</h1>
-      <p>Nous serions honorés de vous compter parmi nous pour célébrer notre mariage.</p>
-
-      <form>
-        <input type="text" placeholder="Votre nom" required />
-        <input type="email" placeholder="Votre email" required />
-        <textarea placeholder="Un petit mot ?" rows="4"></textarea>
-        <button type="submit">Envoyer ma réponse</button>
-      </form>
+      <h1>M & Y</h1>
+      <h2>Vous êtes invités</h2>
+      <p class="invitation-text">
+        Rejoignez-nous pour célébrer ce jour spécial ✨
+      </p>
     </div>
-  </main>
+  </div>
 
   <script>
-    function revealContent() {
-      const intro = document.getElementById('intro-video');
-      const main = document.getElementById('main-content');
-      intro.style.display = 'none';
-      main.classList.add('visible');
-    }
-  </script>
+    const video = document.getElementById("introVideo");
+    const overlay = document.querySelector(".video-overlay");
 
+    video.addEventListener("ended", () => {
+      overlay.classList.add("hidden"); // déclenche le fondu
+    });
+  </script>
 </body>
 </html>
+
 
 
  
