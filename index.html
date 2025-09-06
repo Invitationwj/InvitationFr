@@ -7,15 +7,15 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Écran vidéo -->
-  <div class="video-overlay">
+  <!-- Vidéo plein écran -->
+  <div class="video-overlay" id="videoOverlay">
     <video autoplay muted playsinline id="introVideo">
-      <source src="intro2.mp4" type="video/mp4">
+      <source src="intro.mp4" type="video/mp4">
       Ton navigateur ne supporte pas la vidéo.
     </video>
   </div>
 
-  <!-- Contenu du site -->
+  <!-- Contenu principal -->
   <div class="contenu">
     <div class="conteneur-texte">
       <h1>M & Y</h1>
@@ -28,15 +28,15 @@
 
   <script>
     const video = document.getElementById("introVideo");
-    const overlay = document.querySelector(".video-overlay");
+    const overlay = document.getElementById("videoOverlay");
 
+    // Quand la vidéo se termine → fondu
     video.addEventListener("ended", () => {
-      overlay.classList.add("hidden"); // déclenche le fondu
+      overlay.classList.add("hidden");
+      setTimeout(() => {
+        overlay.style.display = "none"; // disparaît complètement après le fondu
+      }, 1500);
     });
   </script>
 </body>
 </html>
-
-
-
- 
