@@ -37,7 +37,6 @@ body, html {
 }*/
 /* Site (caché au départ) old */
 #site-content {
-  background-image: url("Wedding Invitation.pdf");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
