@@ -112,7 +112,7 @@ form {
   z-index: 10; /* reste au-dessus de l’image */
 }
 
-form input[type="text"],
+/*form input[type="text"],
 form input[type="email"] {
   padding: 12px;
   /*border: 1px solid #a8d5a2;*/
@@ -122,7 +122,20 @@ form input[type="email"] {
   margin-bottom: 15px;
   border: 1px solid #ccc;
   border-radius: 8px;
+}*/
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.9); /* aussi un fond léger pour la lisibilité */
 }
+
 form input[type="submit"] {
   background: #a8d5a2;
   color: white;
