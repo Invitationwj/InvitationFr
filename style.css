@@ -8,6 +8,17 @@
 body, html {
   height: 100%;
   font-family: 'Cormorant Garamond', serif;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden; /* empêche le scroll horizontal */
+}
+
+
+img {
+  max-width: 100%;  /* l’image s’adapte à l’écran */
+  height: auto;
+  display: block;
 }
 
 /* Vidéo */
