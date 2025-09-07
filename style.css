@@ -89,7 +89,7 @@ h1 {
 /* Formulaire */
 form {
   max-width: 500px;
-  margin: -500px auto 40px auto; /* remonte de 100px, ajuste si besoin */
+  margin: -250px auto 40px auto; /* remonte de 100px, ajuste si besoin */
   padding: 20px;
   background: rgba(255, 255, 255, 0.5); /* blanc semi-transparent */
   border-radius: 12px;
