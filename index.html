@@ -44,7 +44,7 @@
   </div>
 
   <!-- Bloc séparé pour le formulaire -->
-  <div class="conteneur-formulaire">
+  <!--<div class="conteneur-formulaire">
     <form class="rsvp">
       <label for="nom">Nom</label>
       <input type="text" id="nom" name="nom" required>
@@ -54,7 +54,29 @@
 
       <input type="submit" value="Envoyer">
     </form>
-  </div>
+  </div>-->
+       <div cclass="conteneur-formulaire">
+         <form class="rsvp">
+  <form action="https://formspree.io/f/xdklnnpg" method="POST">
+    <label for="prenom">Prénom :</label>
+<input type="text" id="prenom" name="prenom" required>
+
+<label for="nom">Nom :</label>
+<input type="text" id="nom" name="nom" required>
+    <label>
+      <input type="checkbox" name="presence" value="oui">
+      Oui
+    </label>
+    <label>
+      <input type="checkbox" name="presence" value="non">
+      Non
+    </label>
+
+    <br><br>
+
+    <input type="submit" value="Envoyer">
+  </form>
+</div>
 </section>
 
   <script>
