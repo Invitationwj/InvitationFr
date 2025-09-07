@@ -99,17 +99,29 @@ h1 {
   margin-bottom: 30px;
 }
 
+
 /* Formulaire */
 form {
   display: flex;
   flex-direction: column;
   gap: 15px;
+  max-width: 500px;   /* limite la largeur */
+  margin: 0 auto;     /* centre horizontalement */
+  padding: 20px;
+  background: rgba(255,255,255,0.85); /* petit fond blanc semi-transparent */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 form input[type="text"],
 form input[type="email"] {
   padding: 12px;
-  border: 1px solid #a8d5a2;
-  border-radius: 6px;
+  /*border: 1px solid #a8d5a2;*/
+  width: 100%;       /* ils prennent 100% de la largeur du formulaire */
+  box-sizing: border-box;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
 }
 form input[type="submit"] {
   background: #a8d5a2;
