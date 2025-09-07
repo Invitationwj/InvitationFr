@@ -37,9 +37,8 @@ body, html {
 }*/
 /* Site (caché au départ) old */
 #site-content {
-
-    background: url("Wedding Invitation.jpg") no-repeat center center/cover;
   background-size: cover;
+  background: url("Wfa 2.jpg") no-repeat center center/cover;
   background-position: center;
   background-repeat: no-repeat;
   padding: 60px 20px;
