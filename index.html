@@ -16,8 +16,8 @@
     </video>
   </div>
 
-  <!-- Contenu du site -->
-  <div id="site-content">
+  <!-- Contenu du site old  -->
+  <!--  <div id="site-content">
     <div class="conteneur-texte">
       <h1>Vous êtes invités</h1>
       <div class="ligne-sous-titre"></div>
@@ -34,7 +34,29 @@
         <input type="submit" value="Envoyer ma réponse">
       </form>
     </div>
+  </div> -->
+  <section id="site-content">
+  <!-- Bloc pour le texte + image -->
+  <div class="conteneur-texte">
+    <h1>Invitation</h1>
+    <p>Vous êtes conviés à célébrer notre mariage...</p>
+    <img src="Wedding Invitation.pdf" alt="Décor" class="flower">
   </div>
+
+  <!-- Bloc séparé pour le formulaire -->
+  <div class="conteneur-formulaire">
+    <h2>Confirmez votre présence</h2>
+    <form class="rsvp">
+      <label for="nom">Nom</label>
+      <input type="text" id="nom" name="nom" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+
+      <input type="submit" value="Je confirme">
+    </form>
+  </div>
+</section>
 
   <script>
     const video = document.getElementById('intro-video');
