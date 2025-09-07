@@ -38,19 +38,10 @@ img {
   object-fit: contain; /*couvre tout */
 }
 
-/* Site (caché au départ) old */
-/*#site-content {
-  display: none;
-  min-height: 100vh;
-  background: url("Wedding Invitation.pdf") no-repeat center center/cover;
-  padding: 60px 20px;
-  text-align: center;
-}*/
-/* Site (caché au départ) old */
+/* Site (caché au départ) */
 #site-content {
   background-size: cover;
-    display: block;
-  /*background: url("wafa2.jpg") no-repeat center center/cover;*/
+  display: none;
   background-position: center;
   background-repeat: no-repeat;
   padding: 60px 20px;
@@ -98,9 +89,9 @@ h1 {
 /* Formulaire */
 form {
   max-width: 500px;
-  margin: -100px auto 40px auto; /* remonte de 100px, ajuste si besoin */
+  margin: -500px auto 40px auto; /* remonte de 100px, ajuste si besoin */
   padding: 20px;
-  background: rgba(255, 255, 255, 0.8); /* blanc semi-transparent */
+  background: rgba(255, 255, 255, 0.5); /* blanc semi-transparent */
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   position: relative;
@@ -117,7 +108,7 @@ form textarea {
   margin-bottom: 15px;
   border: 1px solid #ccc;
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.9); /* aussi un fond léger pour la lisibilité */
+  background: rgba(255, 255, 255, 0.6); /* aussi un fond léger pour la lisibilité */
 }
 
 form input[type="submit"] {
