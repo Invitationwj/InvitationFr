@@ -1,0 +1,164 @@
+body, html {
+  height: 100%;
+  font-family: 'Cormorant Garamond', serif;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden; /* empêche le scroll horizontal */
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-color: #ffff;
+}
+
+.hero {
+  padding: 100px 20px 60px;
+   text-align: center;
+   
+}
+
+h1 {
+  font-size: 3em;
+  font-weight: 300;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+h2 {
+  font-size: 1.3em;
+  font-weight: 400;
+  color: #666;
+  margin-top: 0;
+}
+
+.invitation-text {
+  margin-top: 40px;
+  font-size: 1.1em;
+  line-height: 1.6;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.rsvp {
+  margin-top: 50px;
+}
+
+label {
+  display: block;
+  margin: 10px 0;
+  font-size: 1em;
+}
+
+footer {
+  margin-top: 80px;
+  font-size: 0.8em;
+  color: #aaa;
+}
+
+@media (max-width: 300px) {
+  h1 {
+    font-size: 2em;
+  }
+
+  .invitation-text {
+   font-size: 1.2em;
+  line-height: 1.8;
+  padding: 0 15px;
+  }
+   .conteneur-texte {
+     width: 100%;
+    padding: 0px 0px;
+      max-width: 100%;
+      margin: 0px 0px;
+  box-sizing: border-box;
+  border-radius: 1px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+    text-align: center;
+   }
+   .hero {
+       width: 100%;
+      margin: 0px 0px;
+        padding: 0 0px;
+      }
+   .ligne-sous-titre {
+       max-width: 20%;
+      }
+     button, input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    box-sizing: border-box;
+  }
+ 
+}
+
+button, input[type="submit"] {
+background-color: #a8d5a2; /* vert clair */
+  color: white; /* couleur du texte */
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover, input[type="submit"]:hover {
+  background-color: #94c994;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.ligne-sous-titre {
+  width: 400px;      /* largeur de la ligne */
+  height: 1px;       /* épaisseur de la ligne */
+  background-color: #ccc;  /* couleur de la ligne */
+  margin: 10px auto; /* espace autour + centrage */
+}
+
+h1, h2, .titre-mariage {
+  font-family: 'Cormorant Garamond', serif; /* Pour les titres */
+}
+
+.flower {
+  display: block;
+  max-width: 200px;
+  margin: 20px auto 0 auto; /* centre l'image */
+  height: auto;
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+    width: 35%;
+    padding: 12px;
+    margin-bottom: 15px;
+   border: 1px solid #ccc; /* gris très doux */
+    background-color: #fefefe;
+    }
+    input[type="checkbox"] {
+  margin-right: 20px;
+  border: none;
+}
+.conteneur-texte {
+  background-color: rgba(255, 255, 255, 0.9); /* fond blanc translucide */
+  padding: 20px;
+  max-width: 80%;
+  margin: 30px auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+    text-align: center; }
+
+
+.image-container {
+  width: 100%;       /* prend toute la largeur dispo */
+  text-align: center;
+}
+
+.full-img {
+  width: 100%;       /* toujours 100% de la largeur de l’écran */
+  height: auto;      /* garde les proportions originales */
+  display: block;    /* supprime les espaces indésirables */
+}
