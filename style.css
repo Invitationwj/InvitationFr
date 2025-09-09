@@ -41,7 +41,16 @@ h2 {
 
 .rsvp {
   margin-top: 5px;
+
 }
+.rsvp label {
+
+  display: inline-block;   /* côte à côte */
+  margin-right: 20px;      /* espace entre les cases */
+  font-size: 1em;
+  cursor: pointer;
+}
+
 
 label {
   display: block;
