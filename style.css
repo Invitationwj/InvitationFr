@@ -51,6 +51,22 @@ body, html {
   from { opacity: 0; }
   to { opacity: 1; }
 }
+.image-container img {
+  width: 100%;        /* toujours la largeur dispo */
+  height: auto;       /* garde les proportions */
+  border-radius: 12px; /* arrondi si tu veux garder le style */
+}
+
+@media (max-width: 768px) {
+  .conteneur-texte {
+    max-width: 100%;   /* pas de limite sur mobile */
+    padding: 20px;     /* moins de marge pour laisser plus de place à l’image */
+  }
+  h1 {
+    font-size: 2em;
+  }
+}
+  
 
 h1 {
   font-size: 3em;
@@ -93,10 +109,7 @@ footer {
   color: #aaa;
 }
 
-@media (max-width: 300px) {
-  h1 {
-    font-size: 2em;
-  }
+
 
   .invitation-text {
    font-size: 1.2em;
