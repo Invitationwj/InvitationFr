@@ -43,13 +43,6 @@ h2 {
   margin-top: 5px;
 
 }
-.rsvp label {
-
-  display: inline-block;   /* côte à côte */
-  margin-right: 20px;      /* espace entre les cases */
-  font-size: 1em;
-  cursor: pointer;
-}
 
 
 label {
@@ -149,6 +142,9 @@ form textarea {
     input[type="checkbox"] {
   margin-right: 20px;
   border: none;
+  display: inline-block;   /* côte à côte */
+  font-size: 1em;
+  cursor: pointer;
 }
 .conteneur-texte {
   background-color: rgba(255, 255, 255, 0.9); /* fond blanc translucide */
@@ -171,3 +167,4 @@ form textarea {
   height: auto;      /* garde les proportions originales */
   display: block;    /* supprime les espaces indésirables */
 }
+
