@@ -8,6 +8,14 @@
 </head>
 <body>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
+   <!-- Vidéo d’intro -->
+  <div id="video-container">
+    <video autoplay muted playsinline id="intro-video">
+      <source src="Intro4.mov" type="video/quicktime">
+      <source src="Intro4.mp4" type="video/mp4">
+      Ton navigateur ne supporte pas la vidéo.
+    </video>
+  </div>
 
 <div class="conteneur-texte">
   <div class="image-container">
@@ -44,5 +52,15 @@
   <footer>
     Site réalisé avec amour pour un jour inoubliable ✨
   </footer>
+   <script>
+    const video = document.getElementById('intro-video');
+    const container = document.getElementById('video-container');
+    const content = document.getElementById('site-content');
+
+    video.addEventListener('ended', () => {
+      container.style.display = "none";   // cache la vidéo
+      content.classList.add("show");      // affiche le site
+    });
+  </script>
 </body>
 </html>
