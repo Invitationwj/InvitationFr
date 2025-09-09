@@ -204,26 +204,27 @@ form textarea {
   display: block;    /* supprime les espaces indésirables */
 }
 
-select {
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 15px;
+
+
+form select {
+  width: auto; /* ne prend pas toute la largeur */
+  padding: 10px 14px;
   border: 1px solid #ccc; /* même gris doux que tes inputs */
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.9); /* fond léger comme les inputs */
-  font-size: 16px;
+  background: rgba(255, 255, 255, 0.9);
+  font-size: 12px;
   font-family: 'Cormorant Garamond', serif;
-  appearance: none; /* enlève le style par défaut moche */
-  -webkit-appearance: none;
+    appearance: none; /* enlève le style par défaut moche */
+   -webkit-appearance: none;
   -moz-appearance: none;
   cursor: pointer;
-  transition: border-color 0.3s, box-shadow 0.3s;
+  transition: border 0.3s, box-shadow 0.3s;
 }
-
 /* Quand on clique dessus (focus) */
-select:focus {
-  border-color: #a8d5a2; 
-  box-shadow: 0 0 5px rgba(168, 213, 162, 0.6);
+
+form select:focus {
+  border: 1px solid #a8d5a2;
+  box-shadow: 0 0 6px rgba(168, 213, 162, 0.6);
   outline: none;
 }
 
