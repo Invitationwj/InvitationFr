@@ -12,8 +12,7 @@ body, html {
 
 .hero {
   padding: 100px 20px 60px;
-   text-align: center;
-   
+   text-align: center; 
 }
 /* Vidéo */
 #video-container {
