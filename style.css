@@ -8,7 +8,7 @@ body, html {
   background-repeat: no-repeat;
   background-position: top center;
   background-color: #ffff;
-    backgound-image: url("Invitationwfond.jpg"); /* ton image */
+ 
 }
 
 .hero {
@@ -39,6 +39,7 @@ body, html {
   background-position: center;
   background-repeat: no-repeat;
   padding: 60px 20px;
+  Backgound-image: url("Invitationwfond.jpg"); /* ton image */
 }
 
 #site-content.show {
@@ -112,7 +113,7 @@ footer {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
     text-align: center;
-        backgound-image: url("Invitationwfond.jpg"); /* ton image */
+        
    }
    .hero {
        width: 100%;
