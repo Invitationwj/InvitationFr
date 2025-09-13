@@ -103,18 +103,7 @@ footer {
   line-height: 1.8;
   padding: 0 15px;
   }
-   .conteneur-texte {
-     width: 100%;
-    padding: 0px 0px;
-      max-width: 100%;
-      margin: 0px 0px;
-  box-sizing: border-box;
-  border-radius: 1px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  box-sizing: border-box;
-    text-align: center;
-        
-   }
+  
    .hero {
        width: 100%;
       margin: 0px 0px;
@@ -186,6 +175,18 @@ form textarea {
   box-sizing: border-box;
   text-align: center; 
 }
+ /*.conteneur-texte {
+     width: 100%;
+    padding: 0px 0px;
+      max-width: 100%;
+      margin: 0px 0px;
+ 
+  border-radius: 1px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  text-align: center;
+        
+   }*/
 
 
 .image-container {
