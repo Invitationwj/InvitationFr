@@ -7,7 +7,6 @@ body, html {
   overflow-x: hidden; /* empêche le scroll horizontal */
   background-repeat: no-repeat;
   background-position: top center;
-  background-color: #ffff;
   background-image: url("wafaparisfond.png"); /* ton image */
   background-size: cover;
     min-height: 200vh;
