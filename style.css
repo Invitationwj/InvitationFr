@@ -7,6 +7,10 @@ body, html {
   overflow-x: hidden; /* empêche le scroll horizontal */
   background-repeat: no-repeat;
   background-position: top center;
+  background-size: cover;
+  min-height: 200vh;
+  background-attachment: fixed; /* 🔥 le fond reste fixé et visible même si peu de contenu */
+  padding-bottom: 200px;
 
 }
 
