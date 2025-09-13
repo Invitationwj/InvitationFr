@@ -8,6 +8,7 @@ body, html {
   background-repeat: no-repeat;
   background-position: top center;
   background-color: #ffff;
+    backgound-image: url("wafaparisfond.png"); /* ton image */
 }
 
 .hero {
@@ -35,7 +36,6 @@ body, html {
 #site-content {
   background-size: cover;
   display: none;
-  backgound-image: url("wafaparisfond.png"); /* ton image */
   background-position: center;
   background-repeat: no-repeat;
   padding: 60px 20px;
