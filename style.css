@@ -39,7 +39,7 @@ body, html {
   background-position: center;
   background-repeat: no-repeat;
   padding: 60px 20px;
-  Backgound-image: url("Invitationwfond.jpg"); /* ton image */
+  background-image: url("Invitationwfond.jpg"); /* ton image */
 }
 
 #site-content.show {
