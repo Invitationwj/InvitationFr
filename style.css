@@ -121,12 +121,12 @@ footer {
   background-image: url("fondtext.png");
 }
 .partie1 img {
-  max-width: 300px;  /* limite la largeur max */
-  width: 100%;       /* prend la largeur dispo mais pas plus que max */
-  height: auto;      /* garde les proportions */
-  display: block;    /* évite les espaces bizarres */
-  margin: 0 auto 20px auto; /* centre + espace en bas */
-  border-radius: 12px; /* optionnel : arrondi */
+ width: 80%;        /* l’image prend 80% de la largeur dispo */
+  max-width: 400px;  /* mais ne dépasse jamais 400px */
+  height: auto;      /* proportions respectées */
+  display: block;
+  margin: 0 auto 20px auto;
+  border-radius: 12px;
 }
 
 /* Mobile responsive */
@@ -147,5 +147,9 @@ footer {
   form select,
   form button {
     font-size: 1rem;
+  }
+  .partie1 img {
+    width: 60%;      /* un peu plus petite sur mobile */
+    max-width: 250px;
   }
 }
