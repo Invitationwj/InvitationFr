@@ -1,0 +1,139 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  width: 100%;
+  font-family: 'Cormorant Garamond', serif;
+  overflow-x: hidden;
+  background-color: #fff;
+}
+
+/* Intro vidéo plein écran */
+#intro {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+  background: black;
+}
+
+#intro-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Vidéo de fond */
+#video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* Contenu principal */
+#site-content {
+  position: relative;
+  z-index: 5;
+  text-align: center;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+.conteneur-texte {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image-container img.full-img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+/* Formulaire */
+.rsvp {
+  background: rgba(255, 255, 255, 0.85);
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 400px;
+  margin: -50px auto 50px auto; /* un peu sur l'image */
+}
+
+.rsvp h2 {
+  margin-bottom: 15px;
+  font-size: 1.8rem;
+}
+
+form input[type="text"],
+form select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+form .checkboxes {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 15px;
+}
+
+form input[type="submit"] {
+  background: black;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+
+form input[type="submit"]:hover {
+  background: #444;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  #intro-video,
+  #video-background {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .rsvp {
+    width: 90%;
+    margin: -30px auto 30px auto;
+  }
+
+  form input,
+  form select,
+  form button {
+    font-size: 1rem;
+  }
+}
