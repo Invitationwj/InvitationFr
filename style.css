@@ -121,8 +121,8 @@ footer {
   background-image: url("fondtext.png");
 }
 .partie1 img {
- width: 00%;        /* l’image prend 80% de la largeur dispo */
-  max-width: 600px;  /* mais ne dépasse jamais 400px */
+ width: 90%;        /* l’image prend 80% de la largeur dispo */
+  max-width: 400px;  /* mais ne dépasse jamais 400px */
   height: auto;      /* proportions respectées */
   display: block;
   margin: 0 auto 20px auto;
