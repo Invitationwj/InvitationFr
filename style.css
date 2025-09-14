@@ -120,6 +120,14 @@ footer {
 .partie1{
   background-image: url("fondtext.png");
 }
+.partie1 img {
+  max-width: 300px;  /* limite la largeur max */
+  width: 100%;       /* prend la largeur dispo mais pas plus que max */
+  height: auto;      /* garde les proportions */
+  display: block;    /* évite les espaces bizarres */
+  margin: 0 auto 20px auto; /* centre + espace en bas */
+  border-radius: 12px; /* optionnel : arrondi */
+}
 
 /* Mobile responsive */
 @media (max-width: 768px) {
