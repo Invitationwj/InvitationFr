@@ -150,6 +150,6 @@ footer {
   }
   .partie1 img {
     width: 60%;      /* un peu plus petite sur mobile */
-    max-width: 50px;
+    max-width: 100px;
   }
 }
