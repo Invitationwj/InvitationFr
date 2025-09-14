@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>W&J</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Intro vidéo -->
+  <div id="intro">
+    <video id="intro-video" autoplay muted playsinline>
+      <source src="intro.mp4" type="video/mp4" />
+      Ton navigateur ne supporte pas la vidéo.
+    </video>
+  </div>
+
+  <!-- Background vidéo -->
+  <video autoplay muted loop playsinline id="video-background">
+    <source src="background.mp4" type="video/mp4" />
+    Ton navigateur ne supporte pas la vidéo.
+  </video>
+
+  <!-- Contenu du site -->
+  <div id="site-content">
+    <div class="conteneur-texte">
+      <div class="image-container">
+        <img src="fond2wbon.jpg" alt="Invitation" class="full-img">
+      </div>
+
+      <div class="rsvp">
+        <h2>RSVP</h2>
+        <form action="https://formspree.io/f/xdklnnpg" method="POST">
+          <label for="nom">Nom et prénom:</label>
+          <input type="text" id="nom" name="nom" required>
+
+          <div class="checkboxes">
+            <label><input type="checkbox" name="presence" value="oui"> Oui</label>
+            <label><input type="checkbox" name="presence" value="non"> Non</label>
+          </div>
+
+          <label for="repas">Choix du repas :</label>
+          <select id="repas" name="repas" required>
+            <option value="viande">Viande</option>
+            <option value="vegetarien">Végétarien</option>
+          </select>
+
+          <input type="submit" value="Envoyer">
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    Site réalisé avec amour pour un jour inoubliable ✨
+  </footer>
+
+  <script>
+    // Quand l'intro se termine, on l'enlève
+    const intro = document.getElementById("intro");
+    const introVideo = document.getElementById("intro-video");
+
+    introVideo.addEventListener("ended", () => {
+      intro.style.display = "none";
+    });
+  </script>
+</body>
+</html>
