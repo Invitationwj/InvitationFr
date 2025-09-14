@@ -245,6 +245,16 @@ form select:focus {
   background-size: cover;   /* 🔥 remplira toujours sans bandes */
 }
 
+  .video-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* couvre toute la page */
+      z-index: -1; /* passe derrière le contenu */
+    }
+
 
 @media (max-width: 768px) {
   h1 {
