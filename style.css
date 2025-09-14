@@ -1,4 +1,4 @@
-body, html {
+/*body, html {
   height: 100%;
   font-family: 'Cormorant Garamond', serif;
   margin: 0;
@@ -12,7 +12,16 @@ body, html {
   background-attachment: fixed; /* 🔥 le fond reste fixé et visible même si peu de contenu */
   padding-bottom: 200px;
 
-}
+}*/
+  
+body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Cormorant Garamond', serif;
+      color: white;
+      text-align: center;
+    }
 
 .hero {
   padding: 100px 20px 60px;
@@ -39,10 +48,10 @@ body, html {
 #site-content {
   background-size: cover;
   display: none;
-  background-position: center;
-  background-repeat: no-repeat;
-  padding: 60px 20px;
-  /*background-image: url("wafaparisfond.png"); /* ton image */*/
+  position: relative;
+  z-index: 1;
+  padding: 100px 20px;
+
 }
 
 #site-content.show {
@@ -225,16 +234,16 @@ form select:focus {
   box-shadow: 0 0 6px rgba(168, 213, 162, 0.6);
   outline: none;
 }
-.bg-image {
+/*.bg-image {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   z-index: -1; /* derrière ton contenu */
-}
+}/*
 
-.bg-image::before {
+/*.bg-image::before {
   content: "";
   position: absolute;
   top: 0;
@@ -243,7 +252,7 @@ form select:focus {
   height: 100%;
   background: url("wafaparisfond.png") no-repeat center center;
   background-size: cover;   /* 🔥 remplira toujours sans bandes */
-}
+}*/
 
   .video-bg {
       position: fixed;
