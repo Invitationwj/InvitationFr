@@ -48,9 +48,6 @@ body, html {
 #site-content {
   background-size: cover;
   display: none;
-  position: relative;
-  z-index: 1;
-  padding: 100px 20px;
 
 }
 
@@ -185,6 +182,9 @@ form textarea {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
   box-sizing: border-box;
   text-align: center; 
+    position: relative;
+  z-index: 1;
+  padding: 100px 20px;
 }
  /*.conteneur-texte {
      width: 100%;
