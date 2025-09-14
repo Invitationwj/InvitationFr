@@ -10,7 +10,7 @@ body, html {
   width: 100%;
   font-family: 'Cormorant Garamond', serif;
   overflow-x: hidden;
-  background-color: #fff;
+   background: transparent !important;
 }
 
 /* Intro vidéo plein écran */
