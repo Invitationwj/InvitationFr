@@ -149,7 +149,7 @@ footer {
     font-size: 1rem;
   }
   .partie1 img {
-    width: 60%;      /* un peu plus petite sur mobile */
+    width: 80%;      /* un peu plus petite sur mobile */
     max-width: 100px;
   }
 }
