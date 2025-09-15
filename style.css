@@ -48,7 +48,10 @@ body, html {
   text-align: center;
   padding: 20px;
   min-height: 100vh;
-  background: transparent;
+  background: rgba(255, 255, 255, 0.9);
+   border-radius: 12px;
+
+
 }
 
 .conteneur-texte {
