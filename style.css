@@ -204,6 +204,7 @@ html,body{height:100%;width:100%;font-family:"Cormorant Garamond", serif;backgro
 /* RSVP section styling */
 .rsvp-section{margin-top:6px}
 .rsvp-section h2{font-size:14px;letter-spacing:1px;margin-bottom:10px}
+.rsvp-title {font-size:14px;letter-spacing:1px;margin-bottom:10px}
 
 /* Form */
 form{display:flex;flex-direction:column;align-items:center;gap:12px;width:100%}
