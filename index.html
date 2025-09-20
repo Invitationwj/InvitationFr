@@ -15,9 +15,6 @@
       <source src="with song.mp4" type="video/mp4" />
       Ton navigateur ne supporte pas la vidéo.
     </video>
-    <button onclick="document.getElementById('intro-video').muted = false;">
-  🔊 Activer le son
-</button>
   </div>
 
   <!-- Background vidéo -->
@@ -146,6 +143,23 @@
       intro.style.display = "none";
     });
   </script>
+      <video id="myVideo" src="video.mp4" autoplay muted playsinline loop></video>
+
+<script>
+  const video = document.getElementById('myVideo');
+
+  // Fonction qui enlève le mute après une interaction
+  function enableSound() {
+    video.muted = false;
+    video.volume = 1.0;
+    // On supprime l'écouteur pour éviter de répéter
+    document.removeEventListener('click', enableSound);
+  }
+
+  // Premier clic sur la page → son activé
+  document.addEventListener('click', enableSound);
+</script>
+
   
 </body>
 </html>
