@@ -142,11 +142,16 @@
     const intro = document.getElementById("intro");
     const introVideo = document.getElementById("intro-video");
 
-    introVideo.addEventListener("ended", () => {
+  introVideo.addEventListener("ended", () => {
+    // On prépare la transition
+    intro.style.transition = "opacity 2s ease";
+    intro.style.opacity = "0"; // fade-out
+
+    // Après 2 secondes (le temps de la transition), on enlève l'élément
+    setTimeout(() => {
       intro.style.display = "none";
-        intro.style.transition = "opacity 2s ease";
-  intro.style.opacity = "0";
-    });
+    }, 2000);
+  });
   </script>
      <script>
   const video = document.getElementById("intro-video");
