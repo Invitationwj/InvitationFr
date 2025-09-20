@@ -11,7 +11,7 @@
 
   <!-- Intro vidéo -->
   <div id="intro">
-    <video id="intro-video" autoplay muted>
+    <video id="intro-video" autoplay muted playsinline>
       <source src="with song.mp4" type="video/mp4" />
       Ton navigateur ne supporte pas la vidéo.
     </video>
@@ -143,19 +143,28 @@
       intro.style.display = "none";
     });
   </script>
-      <script>
-  const video = document.getElementById('intro-video');
+  <script>
+  const video = document.getElementById('myVideo');
 
-  // Fonction qui enlève le mute après une interaction
-  function enableSound() {
-    video.muted = false;
-    video.volume = 1.0;
-    // On supprime l'écouteur pour éviter de répéter
+  async function enableSound() {
+    try {
+      video.muted = false;
+      video.volume = 1.0;
+      await video.play(); // relance la vidéo avec le son
+    } catch (err) {
+      console.log("Impossible de lancer avec son :", err);
+    }
+
+    // supprimer les écouteurs après le premier déclenchement
     document.removeEventListener('click', enableSound);
+    document.removeEventListener('touchstart', enableSound);
+    document.removeEventListener('scroll', enableSound);
   }
 
-  // Premier clic sur la page → son activé
+  // écoute plusieurs types d'interactions
   document.addEventListener('click', enableSound);
+  document.addEventListener('touchstart', enableSound); // iOS/Android
+  document.addEventListener('scroll', enableSound);
 </script>
 </body>
 </html>
