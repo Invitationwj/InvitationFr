@@ -27,7 +27,7 @@ body, html {
 #intro-video {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 /* Vidéo de fond */
@@ -37,7 +37,7 @@ body, html {
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   z-index: -1;
  
 }
@@ -50,7 +50,7 @@ body, html {
   padding: 20px;
   min-height: 100vh;
     width: 70%;
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.8);
    border-radius: 12px;
   margin: 0 auto;
 
@@ -139,7 +139,8 @@ footer {
   #video-background {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+     object-position: center center;
   }
 
   .rsvp {
