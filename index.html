@@ -143,5 +143,19 @@
       intro.style.display = "none";
     });
   </script>
+      <script>
+  const video = document.getElementById('intro-video');
+
+  // Fonction qui enlève le mute après une interaction
+  function enableSound() {
+    video.muted = false;
+    video.volume = 1.0;
+    // On supprime l'écouteur pour éviter de répéter
+    document.removeEventListener('click', enableSound);
+  }
+
+  // Premier clic sur la page → son activé
+  document.addEventListener('click', enableSound);
+</script>
 </body>
 </html>
