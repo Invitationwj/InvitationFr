@@ -143,21 +143,23 @@
       intro.style.display = "none";
     });
   </script>
-      <video id="myVideo" src="video.mp4" autoplay muted playsinline loop></video>
+     <script>
+  const video = document.getElementById("with song.mp4");
 
-<script>
-  const video = document.getElementById('myVideo');
-
-  // Fonction qui enlève le mute après une interaction
+  // Active le son après la première interaction
   function enableSound() {
-    video.muted = false;
-    video.volume = 1.0;
-    // On supprime l'écouteur pour éviter de répéter
-    document.removeEventListener('click', enableSound);
+    video.muted = false;      // enlève mute
+    video.volume = 1.0;       // son max
+    video.play().catch(err => console.log("play bloqué:", err));
+
+    // supprime les écouteurs pour ne pas répéter
+    document.removeEventListener("click", enableSound);
+    document.removeEventListener("touchstart", enableSound);
   }
 
-  // Premier clic sur la page → son activé
-  document.addEventListener('click', enableSound);
+  // écoute clic (desktop) et touch (mobile)
+  document.addEventListener("click", enableSound);
+  document.addEventListener("touchstart", enableSound);
 </script>
 
   
