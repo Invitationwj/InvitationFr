@@ -15,6 +15,9 @@
       <source src="with song.mp4" type="video/mp4" />
       Ton navigateur ne supporte pas la vidéo.
     </video>
+    <button onclick="document.getElementById('intro-video').muted = false;">
+  🔊 Activer le son
+</button>
   </div>
 
   <!-- Background vidéo -->
@@ -143,28 +146,6 @@
       intro.style.display = "none";
     });
   </script>
-  <script>
-  const video = document.getElementById('myVideo');
-
-  async function enableSound() {
-    try {
-      video.muted = false;
-      video.volume = 1.0;
-      await video.play(); // relance la vidéo avec le son
-    } catch (err) {
-      console.log("Impossible de lancer avec son :", err);
-    }
-
-    // supprimer les écouteurs après le premier déclenchement
-    document.removeEventListener('click', enableSound);
-    document.removeEventListener('touchstart', enableSound);
-    document.removeEventListener('scroll', enableSound);
-  }
-
-  // écoute plusieurs types d'interactions
-  document.addEventListener('click', enableSound);
-  document.addEventListener('touchstart', enableSound); // iOS/Android
-  document.addEventListener('scroll', enableSound);
-</script>
+  
 </body>
 </html>
