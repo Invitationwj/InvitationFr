@@ -18,6 +18,9 @@
       <source src="vite7.mp4" type="video/mp4" />
       Ton navigateur ne supporte pas la vidéo.
     </video>
+    <audio id="intro-music" autoplay loop>
+  <source src="intro-music.mp3" type="audio/mpeg" />
+</audio>
   </div>
 
   <!-- Background vidéo -->
@@ -155,6 +158,7 @@
   </script>
      <script>
   const video = document.getElementById("intro-video");
+       const introMusic = document.getElementById("intro-music");
 
   // Active le son après la première interaction
   function enableSound() {
@@ -170,6 +174,12 @@
   // écoute clic (desktop) et touch (mobile)
   document.addEventListener("click", enableSound);
   document.addEventListener("touchstart", enableSound);
+
+       document.addEventListener("click", () => {
+  introMusic.play();
+}, { once: true });
+
+       
 </script>
 
   
