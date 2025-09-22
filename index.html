@@ -14,14 +14,14 @@
     <!-- <button onclick="document.getElementById('intro-video').muted = false;">
   🔊 Activer le son
 </button>-->
-     <button id="soundButton">
+     <button id="sound-button">
         🔊 Activer le son
     </button>
-    <video id="intro-video" autoplay muted playsinline>
+    <video id="intro-video" playsinline>
       <source src="finalfinal8.mp4" type="video/mp4" />
       Ton navigateur ne supporte pas la vidéo.
     </video>
-    <audio id="intro-music" autoplay muted loop>
+    <audio id="intro-music" loop>
   <source src="son.mp3" type="audio/mp3" />
 </audio>
   </div>
@@ -144,104 +144,42 @@
   </footer>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-  const intro = document.getElementById('intro');
-  const video = document.getElementById('intro-video');
-  const introMusic = document.getElementById('intro-music');
-  const unmuteBtn = document.getElementById('unmute-btn');
+    const intro = document.getElementById('intro');
+    const introVideo = document.getElementById('intro-video');
+    const introMusic = document.getElementById('intro-music');
+    const backgroundVideo = document.getElementById('video-background');
+    const soundButton = document.getElementById('sound-button');
 
-  // Assure que la vidéo est bien muted au départ
-  if (video) video.muted = true;
+    // Mute both media files initially for autoplay
+    introVideo.muted = true;
+    introMusic.muted = true;
 
-  // Fonction d'activation du son (appelée seulement après interaction utilisateur)
-  async function activateSoundAndResume() {
-    try {
-      // Dé-mute la vidéo AVANT de relancer la lecture
-      video.muted = false;
-      video.volume = 1.0;
+    // Start playing the intro video as soon as the page loads.
+    // This starts it muted so it works on all mobile devices.
+    introVideo.play();
+    backgroundVideo.play();
 
-      // Relancer la vidéo (sur Android, relancer play() après unmute évite le blocage)
-      await video.play();
-    } catch (err) {
-      console.warn('video.play() rejeté ou erreur:', err);
-      // On essaie quand même une relance silencieuse
-      try { await video.play(); } catch(e){ console.warn('replay échoué', e); }
-    }
+    // Attach a single click event listener to the sound button
+    soundButton.addEventListener('click', () => {
+        // Unmute the media files and play the music
+        introVideo.muted = false;
+        introMusic.play().catch(err => {
+            console.error('Échec de la lecture de la musique:', err);
+        });
 
-    // Lancer la musique (sur interaction utilisateur donc autorisé)
-    try {
-      await introMusic.play();
-    } catch (err) {
-      console.warn('introMusic.play() rejeté:', err);
-    }
+        // Hide the button after it's been clicked
+        soundButton.style.display = 'none';
 
-    // On cache le bouton d'activation si présent
-    if (unmuteBtn) unmuteBtn.style.display = 'none';
+    }, { once: true }); // The event listener will only run one time
 
-    // On supprime les écouteurs globaux
-    document.removeEventListener('click', docClickHandler);
-    document.removeEventListener('touchstart', docClickHandler);
-  }
-
-  // Handler global (un seul appel nécessaire)
-  function docClickHandler(e) {
-    activateSoundAndResume();
-  }
-
-  // Attache l'écoute sur le bouton (si cliqué explicitement)
-  if (unmuteBtn) {
-    unmuteBtn.addEventListener('click', (e) => {
-      e.stopPropagation(); // évite double-trigger sur document
-      activateSoundAndResume();
-    }, { once: true });
-  }
-
-  // Attache l'écoute globale pour tout autre clic/touch (une seule fois)
-  document.addEventListener('click', docClickHandler, { once: true });
-  document.addEventListener('touchstart', docClickHandler, { once: true });
-
-  // Quand la vidéo se termine, on enlève l'intro proprement
-  video.addEventListener('ended', () => {
-    if (!intro) return;
-    intro.style.transition = 'opacity 0.8s ease';
-    intro.style.opacity = '0';
-    setTimeout(() => { intro.style.display = 'none'; }, 900);
-  });
-
-  // Logs d'erreur pour debug rapide
-  video.addEventListener('error', () => console.error('Video error', video.error));
-  video.addEventListener('stalled', () => console.warn('video stalled'));
-  video.addEventListener('suspend', () => console.warn('video suspend'));
-  video.addEventListener('canplay', () => console.log('video canplay'));
-  video.addEventListener('playing', () => console.log('video playing'));
-
-  // Fallback : bouton "Passer l'intro" si la vidéo ne démarre pas correctement
-  let skipBtn = document.getElementById('skip-intro');
-  if (!skipBtn) {
-    skipBtn = document.createElement('button');
-    skipBtn.id = 'skip-intro';
-    skipBtn.textContent = "Passer l'intro";
-    skipBtn.style.position = 'fixed';
-    skipBtn.style.right = '20px';
-    skipBtn.style.top = '20px';
-    skipBtn.style.zIndex = 9999;
-    skipBtn.style.display = 'none';
-    document.body.appendChild(skipBtn);
-  }
-  skipBtn.addEventListener('click', () => {
-    if (intro) {
-      intro.style.transition = 'opacity 0.4s ease';
-      intro.style.opacity = '0';
-      setTimeout(() => { intro.style.display = 'none'; }, 450);
-    }
-    try { video.pause(); } catch(e){}
-  });
-
-  // Si la vidéo est toujours bloquée au bout de 3s, on montre le skip
-  setTimeout(() => {
-    if (!video || video.readyState < 2 || video.paused) {
-      skipBtn.style.display = 'block';
-    }
-  }, 3000);
+    // When the intro video ends, fade out the intro screen
+    introVideo.addEventListener('ended', () => {
+        intro.style.transition = 'opacity 3s ease-out';
+        intro.style.opacity = '0';
+        setTimeout(() => {
+            intro.style.display = 'none';
+        }, 3000); // Duration matches the CSS transition
+    });
 });
 </script>
 
