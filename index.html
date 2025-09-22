@@ -143,47 +143,50 @@
    
   </footer>
 <script>
-document.addEventListener('DOMContentLoaded', () => {
+ document.addEventListener('DOMContentLoaded', () => {
     const intro = document.getElementById('intro');
     const introVideo = document.getElementById('intro-video');
     const introMusic = document.getElementById('intro-music');
     const backgroundVideo = document.getElementById('video-background');
     const soundButton = document.getElementById('sound-button');
 
-    // Mute both media files initially for autoplay
+    // Mettez les vidéos et l'audio en sourdine pour la lecture automatique.
+    // C'est une étape cruciale pour que la lecture démarre sur mobile.
     introVideo.muted = true;
     introMusic.muted = true;
+    backgroundVideo.muted = true;
 
-    // Start playing the intro video as soon as the page loads.
-    // This starts it muted so it works on all mobile devices.
-    introVideo.play();
-    backgroundVideo.play();
+    // Démarrez la lecture des vidéos. Elles seront silencieuses au départ.
+    // Les navigateurs l'autorisent car il n'y a pas de son.
+    introVideo.play().catch(err => console.error('Erreur de lecture de la vidéo d\'intro:', err));
+    backgroundVideo.play().catch(err => console.error('Erreur de lecture de la vidéo de fond:', err));
 
-    // Attach a single click event listener to the sound button
+    // Ajoutez un seul écouteur d'événement sur le bouton.
+    // C'est l'action de l'utilisateur qui va déclencher le son.
     soundButton.addEventListener('click', () => {
-        // Unmute the media files and play the music
+        // Enlevez la sourdine de la vidéo d'intro.
         introVideo.muted = false;
-        introMusic.play().catch(err => {
-            console.error('Échec de la lecture de la musique:', err);
-        });
+        
+        // Lancez la musique. C'est autorisé car l'utilisateur a cliqué.
+        introMusic.play().catch(err => console.error('Erreur de lecture de la musique:', err));
 
-        // Hide the button after it's been clicked
+        // Cachez le bouton pour éviter de le cliquer plusieurs fois.
         soundButton.style.display = 'none';
 
-    }, { once: true }); // The event listener will only run one time
+    }, { once: true }); // Le {once: true} permet de n'exécuter le code qu'une seule fois.
 
-    // When the intro video ends, fade out the intro screen
+    // Quand la vidéo d'intro est terminée, on la fait disparaître.
     introVideo.addEventListener('ended', () => {
         intro.style.transition = 'opacity 3s ease-out';
         intro.style.opacity = '0';
         setTimeout(() => {
             intro.style.display = 'none';
-        }, 3000); // Duration matches the CSS transition
+        }, 3000); // 3 secondes pour correspondre à la transition CSS
     });
 });
 </script>
 
- 
+
   
 </body>
 </html>
