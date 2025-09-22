@@ -165,7 +165,7 @@
     // C'est l'action de l'utilisateur qui va déclencher le son.
     soundButton.addEventListener('click', () => {
         // Enlevez la sourdine de la vidéo d'intro.
-        introVideo.muted = false;
+        introMusic.muted = false;
         
         // Lancez la musique. C'est autorisé car l'utilisateur a cliqué.
         introMusic.play().catch(err => console.error('Erreur de lecture de la musique:', err));
