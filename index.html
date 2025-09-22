@@ -157,31 +157,33 @@
   });
   </script>
      <script>
-  const video = document.getElementById("intro-video");
-       const introMusic = document.getElementById("intro-music");
+  
 
   // Active le son après la première interaction
-  function enableSound() {
-    video.muted = false;      // enlève mute
-    video.volume = 1.0;       // son max
-    video.play().catch(err => console.log("play bloqué:", err));
+   function enableSound() {
+    
+  const video = document.getElementById("intro-video");
+  const introMusic = document.getElementById("intro-music");
 
-    // supprime les écouteurs pour ne pas répéter
-    document.removeEventListener("click", enableSound);
-    document.removeEventListener("touchstart", enableSound);
-  }
+  // Activer le son de la vidéo
+  video.muted = false;
+  video.volume = 1.0;
 
-  // écoute clic (desktop) et touch (mobile)
-  document.addEventListener("click", enableSound);
-  document.addEventListener("touchstart", enableSound);
+  // Relancer la vidéo (obligatoire sur Android sinon elle se bloque)
+  video.play().catch(err => console.log("play bloqué:", err));
 
-       document.addEventListener("click", () => {
-  introMusic.play();
-}, { once: true });
+  // Lancer la musique
+  introMusic.play().catch(err => console.log("audio bloqué:", err));
 
-       
-</script>
+  // Supprimer les écouteurs pour éviter que ça se répète
+  document.removeEventListener("click", enableSound);
+  document.removeEventListener("touchstart", enableSound);
+}
 
+// Écoute clic (desktop) et touch (mobile)
+document.addEventListener("click", enableSound);
+document.addEventListener("touchstart", enableSound);
+ </script>
   
 </body>
 </html>
